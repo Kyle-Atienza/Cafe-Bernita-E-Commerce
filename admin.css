@@ -1,0 +1,286 @@
+@font-face {
+    font-family: 'Gotham Book';
+    src: url(fonts/Gotham-Book.otf);
+}
+@font-face {
+    font-family: 'Gotham Bold';
+    src: url(fonts/GOTHAM-BOLD.TTF);
+}
+@font-face {
+    font-family: 'Akrobat Regular';
+    src: url(fonts/Akrobat-Regular.otf);
+}
+@font-face {
+    font-family: 'Akrobat Bold';
+    src: url(fonts/Akrobat-Bold.ttf);
+}
+@font-face {
+    font-family: 'Billion Dreams';
+    src: url(fonts/BillionDreams_PERSONAL.ttf);
+}
+
+:root{
+    /* --primary: #F3B770; */
+    --primary: #ffaf4e;
+    --light: #F5F5F5;
+    --dark: #2C221D;
+    --accent: #FD9F71;
+}
+
+
+
+/*Global*/
+
+*{
+    font-family: 'Gotham Book';
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: var(--light);
+    position: relative;
+    
+}
+
+a{
+    text-decoration: none;
+    color: var(--dark);
+}
+
+li{
+    list-style: none;
+}
+
+button{
+    padding: 20px 30px;
+    border-radius: 100px;
+    border: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+textarea,
+input[type="text"],
+input[type="date"],
+input[type="time"]{
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+input[type="date"],
+input[type="time"]{
+    border-radius: 100px;
+}
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+/* typography */
+
+li{
+    font-size: .8rem;
+}
+h1{
+    font-size: 5.5rem;
+    font-family: 'Billion Dreams';
+    line-height: 5rem;
+    font-weight: none;
+}
+h2{
+    font-family: 'Akrobat Regular';
+    font-size: 2rem;
+}
+h3{
+    font-family: 'Akrobat Bold';
+    font-size: 1.5rem;
+}
+h4{
+    font-family: 'Gotham Bold';
+    font-size: 1.2rem;
+}
+
+p,
+thead th,
+textarea::placeholder,
+input[type="text"]::placeholder,
+textarea,
+input[type="text"]{
+    font-size: .8rem;
+}
+
+/*navigation header / footer */
+.header{
+    /* position: absolute; */
+    width: 100%;
+    background-color:var(--primary) ;
+}
+.header-content{
+    padding: 20px 70px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.header-content .logo{
+    margin: 0 70px;
+}
+.header .nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 400px; */
+    width: 50vw;
+    max-width: 500px;
+    min-width: 350px;   
+    
+}
+.header .nav-links li{
+    white-space: nowrap;
+}
+
+.header .nav-links li a{
+    transition: color .3s;
+}
+.header .nav-links li a:hover{
+    color: var(--light);
+}
+
+.view{
+    background-color: var(--dark);
+}
+.view .content{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    width: 50vw;
+    margin: 0 auto;
+    color: var(--light);
+}
+.view .content>*{
+    padding: 5px;
+    transition:3s;
+}
+
+
+.view .content .active{
+    border-bottom: 2px var(--accent) solid;
+
+}
+
+.inventory-tab:hover,
+.add-menu-tab:hover,
+.order-records-tab:hover{
+    border-bottom: 2px var(--accent) solid;
+}
+
+
+.menu-inventory .content,
+.order-records .content{
+    display: flex;
+    
+}
+.menu-inventory .tabs,
+.order-records .records-tab{
+    flex: 1 1 10%;
+}
+.menu-inventory .menu-table-div,
+.order-records .order-table-div{
+    flex: 1 1 90%;
+}
+
+.menu-inventory .tabs>*,
+.order-records .records-tab>*{
+    padding: 10px .5em;
+    cursor: pointer;
+    transition: .5s;
+}
+.menu-inventory .tabs>*:hover, 
+.order-records .records-tab>*:hover{
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.menu-table-div,
+.order-table-div{
+    width: 100%;
+    height: 40%;
+
+    border-collapse: collapse;
+    /* border-radius: 25px; */
+    overflow: auto;
+    /* box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2); */
+    /* border-bottom: 2px var(--dark) solid ; */
+}
+.menu-table-div table,
+.order-table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px var(--dark) solid;
+}
+
+.group-col,
+.price-col{
+    width: 10%;
+}
+.name-col{
+    width: 50%;
+}
+.status-col{
+    width:30%;
+}
+
+
+.menu-table th,
+.order-table th{
+    padding: 5px 10px;
+    background-color: var(--primary);
+    border: 1px var(--dark) solid;
+}
+.menu-table tr td,
+.order-table tr td{
+    padding:  10px;
+    border: 1px var(--dark) solid;
+}
+.menu-table table button{
+    padding: 0;
+    background-color: var(--primary);
+}
+
+
+
+
+.add-menu .content{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+.add-menu .content form{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    text-align: center;
+}
+.add-menu .content form button{
+    background-color: var(--primary);
+}
+.add-menu .content form::placeholder{
+    text-align: center;
+}
+.add-menu .content form input[type=text]{
+    border-bottom: 2px var(--dark) solid;
+}
+
